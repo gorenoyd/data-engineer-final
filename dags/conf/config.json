@@ -1,0 +1,36 @@
+{
+  "storage": {
+    "path": "http://minio:9000/",
+    "host": "minio",
+    "port": 9000,
+    "user": "minioadmin",
+    "pass": "minioadmin",
+    "bucket": "nyc-taxi-raw-data"
+  },
+
+  "sql_scripts_folder": "sql",
+
+  "spark": {
+    "master": {
+      "host": "spark-master",
+      "port": 7077
+    }
+  },
+
+  "clickhouse": {
+    "host": "clickhouse",
+    "port": 8123,
+    "native_port": 9000,
+    "user": "default",
+    "pass": "admin",
+    "dbs": {
+      "staging_db": "nyc_taxi_staging",
+      "silver_db": "nyc_taxi_silver",
+      "golden_db": "nyc_taxi_datamarts"
+    }
+  },
+
+  "raw_data_base_link": "https://d37ci6vzurychx.cloudfront.net/trip-data/",
+  "lookup_table_url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+  "lookup_table_file_name": "taxi_zone_lookup.csv"
+}

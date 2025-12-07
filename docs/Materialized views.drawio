@@ -1,0 +1,301 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram name="Page-1" id="2ca16b54-16f6-2749-3443-fa8db7711227">
+    <mxGraphModel dx="1783" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-175" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=#82b366;fontSize=16;fillColor=#d5e8d4;" value="mv_zones_counts" vertex="1">
+          <mxGeometry height="240" width="400" x="190" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-176" parent="_ZFSaiJQA9snJrnV4Ez8-175" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-177" parent="_ZFSaiJQA9snJrnV4Ez8-176" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;div style=&quot;line-height: 19px; white-space: pre; font-size: 14px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 16px; white-space: normal;&quot;&gt;zone_id&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-180" parent="_ZFSaiJQA9snJrnV4Ez8-176" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Taxi zone number" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-191" parent="_ZFSaiJQA9snJrnV4Ez8-175" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-192" parent="_ZFSaiJQA9snJrnV4Ez8-191" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="borough" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-195" parent="_ZFSaiJQA9snJrnV4Ez8-191" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Borough" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-206" parent="_ZFSaiJQA9snJrnV4Ez8-175" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="400" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-207" parent="_ZFSaiJQA9snJrnV4Ez8-206" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="zone" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-210" parent="_ZFSaiJQA9snJrnV4Ez8-206" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Zone" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-181" parent="_ZFSaiJQA9snJrnV4Ez8-175" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-182" parent="_ZFSaiJQA9snJrnV4Ez8-181" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="pickup_count" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-185" parent="_ZFSaiJQA9snJrnV4Ez8-181" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Total count of pickups in the zone" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-186" parent="_ZFSaiJQA9snJrnV4Ez8-175" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="50" width="400" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-187" parent="_ZFSaiJQA9snJrnV4Ez8-186" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="dropoff_count" vertex="1">
+          <mxGeometry height="50" width="130" as="geometry">
+            <mxRectangle height="50" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZFSaiJQA9snJrnV4Ez8-190" parent="_ZFSaiJQA9snJrnV4Ez8-186" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Total count of dropoofs in the zone" vertex="1">
+          <mxGeometry height="50" width="270" x="130" as="geometry">
+            <mxRectangle height="50" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-19" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=#82b366;fontSize=16;fillColor=#d5e8d4;" value="mv_rides_by_hour" vertex="1">
+          <mxGeometry height="110" width="400" x="690" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-20" parent="nbBRG2ColdfiNjcfRG3h-19" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-21" parent="nbBRG2ColdfiNjcfRG3h-20" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;div style=&quot;line-height: 19px; white-space: pre; font-size: 14px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 16px; white-space: normal;&quot;&gt;hour&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-22" parent="nbBRG2ColdfiNjcfRG3h-20" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Hour in 24-hours format" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-23" parent="nbBRG2ColdfiNjcfRG3h-19" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-24" parent="nbBRG2ColdfiNjcfRG3h-23" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="rides_number" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-25" parent="nbBRG2ColdfiNjcfRG3h-23" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Total number of rides in the hour" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-35" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=#82b366;fontSize=16;fillColor=#d5e8d4;" value="mv_weekdays_by_hour" vertex="1">
+          <mxGeometry height="120.00000000000023" width="400" x="690" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-36" parent="nbBRG2ColdfiNjcfRG3h-35" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-37" parent="nbBRG2ColdfiNjcfRG3h-36" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;div style=&quot;line-height: 19px; white-space: pre; font-size: 14px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 16px; white-space: normal;&quot;&gt;hour&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-38" parent="nbBRG2ColdfiNjcfRG3h-36" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Hour in 24-hours format" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-39" parent="nbBRG2ColdfiNjcfRG3h-35" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="50" width="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-40" parent="nbBRG2ColdfiNjcfRG3h-39" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="rides_number" vertex="1">
+          <mxGeometry height="50" width="130" as="geometry">
+            <mxRectangle height="50" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-41" parent="nbBRG2ColdfiNjcfRG3h-39" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Total number of rides in the hour on weekdays" vertex="1">
+          <mxGeometry height="50" width="270" x="130" as="geometry">
+            <mxRectangle height="50" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-42" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=#82b366;fontSize=16;fillColor=#d5e8d4;" value="mv_weekends_by_hour" vertex="1">
+          <mxGeometry height="120.00000000000023" width="400" x="690" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-43" parent="nbBRG2ColdfiNjcfRG3h-42" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-44" parent="nbBRG2ColdfiNjcfRG3h-43" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;div style=&quot;line-height: 19px; white-space: pre; font-size: 14px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 16px; white-space: normal;&quot;&gt;hour&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-45" parent="nbBRG2ColdfiNjcfRG3h-43" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Hour in 24-hours format" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-46" parent="nbBRG2ColdfiNjcfRG3h-42" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="50" width="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-47" parent="nbBRG2ColdfiNjcfRG3h-46" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="rides_number" vertex="1">
+          <mxGeometry height="50" width="130" as="geometry">
+            <mxRectangle height="50" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-48" parent="nbBRG2ColdfiNjcfRG3h-46" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Total number of rides in the hour on weekends" vertex="1">
+          <mxGeometry height="50" width="270" x="130" as="geometry">
+            <mxRectangle height="50" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-49" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=#82b366;fontSize=16;fillColor=#d5e8d4;" value="mv_trip_categories" vertex="1">
+          <mxGeometry height="290" width="400" x="1220" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-50" parent="nbBRG2ColdfiNjcfRG3h-49" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-51" parent="nbBRG2ColdfiNjcfRG3h-50" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;div style=&quot;line-height: 19px; white-space: pre; font-size: 14px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 16px; white-space: normal;&quot;&gt;trip_hashkey&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-52" parent="nbBRG2ColdfiNjcfRG3h-50" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Trip ID" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-53" parent="nbBRG2ColdfiNjcfRG3h-49" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-54" parent="nbBRG2ColdfiNjcfRG3h-53" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="is_airport" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-55" parent="nbBRG2ColdfiNjcfRG3h-53" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Pickup or dropoff zone is one of the airports" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-56" parent="nbBRG2ColdfiNjcfRG3h-49" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="400" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-57" parent="nbBRG2ColdfiNjcfRG3h-56" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="is_peak_hour" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-58" parent="nbBRG2ColdfiNjcfRG3h-56" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Pickup time is on morning or evening peak hours" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-59" parent="nbBRG2ColdfiNjcfRG3h-49" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-60" parent="nbBRG2ColdfiNjcfRG3h-59" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="is_weekend" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-61" parent="nbBRG2ColdfiNjcfRG3h-59" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Pickup time is on weekend" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-62" parent="nbBRG2ColdfiNjcfRG3h-49" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="50" width="400" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-63" parent="nbBRG2ColdfiNjcfRG3h-62" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="is_intra_zone" vertex="1">
+          <mxGeometry height="50" width="130" as="geometry">
+            <mxRectangle height="50" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-64" parent="nbBRG2ColdfiNjcfRG3h-62" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Pickup and dropoff location is in the same taxi zone" vertex="1">
+          <mxGeometry height="50" width="270" x="130" as="geometry">
+            <mxRectangle height="50" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-65" parent="nbBRG2ColdfiNjcfRG3h-49" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="50" width="400" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-66" parent="nbBRG2ColdfiNjcfRG3h-65" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="is_inter_borough" vertex="1">
+          <mxGeometry height="50" width="130" as="geometry">
+            <mxRectangle height="50" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nbBRG2ColdfiNjcfRG3h-67" parent="nbBRG2ColdfiNjcfRG3h-65" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Pickup and dropoff locations are in different boroughs" vertex="1">
+          <mxGeometry height="50" width="270" x="130" as="geometry">
+            <mxRectangle height="50" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-1" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=#82b366;fontSize=16;fillColor=#d5e8d4;" value="mv_trip_vectors" vertex="1">
+          <mxGeometry height="190" width="400" x="1730" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-2" parent="rcm0dtBQ2o9SOeyPGoy9-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-3" parent="rcm0dtBQ2o9SOeyPGoy9-2" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;div style=&quot;line-height: 19px; white-space: pre; font-size: 14px; font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 16px; white-space: normal;&quot;&gt;vector&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-4" parent="rcm0dtBQ2o9SOeyPGoy9-2" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Pickup zone + dropoff zone" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-5" parent="rcm0dtBQ2o9SOeyPGoy9-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-6" parent="rcm0dtBQ2o9SOeyPGoy9-5" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="hour" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-7" parent="rcm0dtBQ2o9SOeyPGoy9-5" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Hour of ride start in 24-hour format" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-8" parent="rcm0dtBQ2o9SOeyPGoy9-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="400" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-9" parent="rcm0dtBQ2o9SOeyPGoy9-8" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="minute" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-10" parent="rcm0dtBQ2o9SOeyPGoy9-8" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Minute of ride start rolled up to 5-minutes bucket" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-11" parent="rcm0dtBQ2o9SOeyPGoy9-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-12" parent="rcm0dtBQ2o9SOeyPGoy9-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="ride_count" vertex="1">
+          <mxGeometry height="40" width="130" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcm0dtBQ2o9SOeyPGoy9-13" parent="rcm0dtBQ2o9SOeyPGoy9-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;flipH=1;align=left;" value="Number of rides" vertex="1">
+          <mxGeometry height="40" width="270" x="130" as="geometry">
+            <mxRectangle height="40" width="270" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
