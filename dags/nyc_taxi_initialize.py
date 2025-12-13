@@ -29,7 +29,7 @@ DAG_FOLDER = os.path.dirname(__file__)
 CONFIG_PATH = os.path.join(DAG_FOLDER, 'conf', 'config.json')
 
 # Load environment variables
-load_dotenv(dotenv_path='./conf/.env', override=True)
+load_dotenv(dotenv_path=f'{DAG_FOLDER}/conf/.env', override=True)
 
 # Load config
 with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
@@ -45,8 +45,8 @@ def check_storage():
         s3 = boto3.client(
             's3',
             endpoint_url=CONFIG['storage']['path'],
-            aws_access_key_id=CONFIG['storage']['user'],
-            aws_secret_access_key=CONFIG['storage']['pass']
+            aws_access_key_id=os.getenv('STORAGE_USER'),
+            aws_secret_access_key=os.getenv('STORAGE_PASS')
         )
 
         # Check if bucket is present and accessible
@@ -85,8 +85,8 @@ def check_clickhouse():
         clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
         logging.info(f'Connected to Clickhouse successfully.')
     except Exception as e:
@@ -108,8 +108,8 @@ def check_db_existance(db_name):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         result = bool(ch_client.query(sql).result_rows[0][0])
@@ -135,8 +135,8 @@ def create_db(db_name):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         ch_client.command(sql)
@@ -193,8 +193,8 @@ def check_db_schema(db):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         ch_client.command(f'USE {db_name};')
@@ -262,8 +262,8 @@ def get_downloaded_files(file_name=None):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         result = ch_client.query(sql).result_rows
@@ -291,8 +291,8 @@ def write_file_info_to_db(file_name, file_url, id='NULL'):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         ch_client.command(sql)
@@ -314,8 +314,8 @@ def download_taxi_zones():
             s3 = boto3.client(
                 's3',
                 endpoint_url=CONFIG['storage']['path'],
-                aws_access_key_id=CONFIG['storage']['user'],
-                aws_secret_access_key=CONFIG['storage']['pass']
+                aws_access_key_id=os.getenv('STORAGE_USER'),
+                aws_secret_access_key=os.getenv('STORAGE_PASS')
             )
 
             s3.upload_fileobj(BytesIO(response.content), CONFIG['storage']['bucket'], CONFIG['lookup_table_file_name'])
@@ -348,8 +348,8 @@ def mark_file_processed(file_name):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
         ch_client.command(sql)
         logging.info(f'File {file_name} marked as processed.')
@@ -370,8 +370,8 @@ def save_taxi_zones_to_db():
         s3 = boto3.client(
             's3',
             endpoint_url=CONFIG['storage']['path'],
-            aws_access_key_id=CONFIG['storage']['user'],
-            aws_secret_access_key=CONFIG['storage']['pass']
+            aws_access_key_id=os.getenv('STORAGE_USER'),
+            aws_secret_access_key=os.getenv('STORAGE_PASS')
         )
 
         file = s3.get_object(Bucket=CONFIG['storage']['bucket'], Key=CONFIG['lookup_table_file_name'])
@@ -407,8 +407,8 @@ def save_taxi_zones_to_db():
             ch_client = clickhouse_connect.get_client(
                 host=CONFIG['clickhouse']['host'],
                 port=CONFIG['clickhouse']['port'],
-                username=CONFIG['clickhouse']['user'],
-                password=CONFIG['clickhouse']['pass']
+                username=os.getenv('CLICKHOUSE_USER'),
+                password=os.getenv('CLICKHOUSE_PASS')
             )
             result = ch_client.query(sql)
             existing_ids = set(row[0] for row in result.result_rows)

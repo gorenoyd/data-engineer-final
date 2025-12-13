@@ -27,7 +27,7 @@ DAG_FOLDER = os.path.dirname(__file__)
 CONFIG_PATH = os.path.join(DAG_FOLDER, 'conf', 'config.json')
 
 # Load environment variables
-load_dotenv(dotenv_path='./conf/.env', override=True)
+load_dotenv(dotenv_path=f'{DAG_FOLDER}/conf/.env', override=True)
 
 # Load settings
 with open(CONFIG_PATH, 'r',encoding='utf-8') as f:
@@ -54,8 +54,8 @@ def get_downloaded_files(file_name=None):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         result = ch_client.query(sql).result_rows
@@ -81,8 +81,8 @@ def get_taxi_types():
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         result = ch_client.query(sql)
@@ -117,8 +117,8 @@ def download_file(file_url):
                 s3 = boto3.client(
                     's3',
                     endpoint_url=CONFIG['storage']['path'],
-                    aws_access_key_id=CONFIG['storage']['user'],
-                    aws_secret_access_key=CONFIG['storage']['pass']
+                    aws_access_key_id=os.getenv('STORAGE_USER'),
+                    aws_secret_access_key=os.getenv('STORAGE_PASS')
                 )
                 s3.upload_fileobj(file.raw, CONFIG['storage']['bucket'], file_name)
                 logging.info(f"File {file_name} uploaded to storage {CONFIG['storage']['path']}{CONFIG['storage']['bucket']}")
@@ -150,8 +150,8 @@ def write_file_info_to_db(file_name, file_url, id='NULL'):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         ch_client.command(sql)
@@ -201,6 +201,10 @@ def download_raw_data_file():
         for month in range(start_month, stop_month + 1):
             # Get data file for each taxi type (yellow, green etc)
             for taxi in taxi_types:
+                # TODO
+                if taxi['file_prefix'] == 'yellow':
+                    continue
+                
                 raw_data_file_name = f"{taxi['file_prefix']}_tripdata_{year}-{month:02d}.parquet"
 
                 # If that file has already been downloaded - get the next one

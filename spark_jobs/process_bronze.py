@@ -16,6 +16,10 @@ CONFIG = json.loads(sys.argv[1])
 unprocessed_files_list = json.loads(sys.argv[2])
 taxi_type_id = None
 
+# Get credentials
+CLICKHOUSE_USER = sys.argv[3]
+CLICKHOUSE_PASS = sys.argv[4]
+
 
 def drop_outliers(df, column_name):
     """
@@ -186,8 +190,8 @@ def insert_staging_into_silver(df):
     clickhouse_options = {
         'driver': 'com.clickhouse.jdbc.ClickHouseDriver',
         'url': f"jdbc:clickhouse://{CONFIG['clickhouse']['host']}:{CONFIG['clickhouse']['port']}/{CONFIG['clickhouse']['dbs']['silver_db']}?compress=false",
-        'user': CONFIG['clickhouse']['user'],
-        'password': CONFIG['clickhouse']['pass'],
+        'user': CLICKHOUSE_USER,
+        'password': CLICKHOUSE_PASS,
         'batchsize': '100000',
         'isolationLevel': 'NONE',
         'rewriteBatchedStatements': 'true'
@@ -238,8 +242,8 @@ def insert_staging_into_silver(df):
             .option('driver', 'com.clickhouse.jdbc.ClickHouseDriver') \
             .option('url', f"jdbc:clickhouse://{CONFIG['clickhouse']['host']}:{CONFIG['clickhouse']['port']}/{CONFIG['clickhouse']['dbs']['silver_db']}?compress=false") \
             .option('dbtable', 'trip_main_details') \
-            .option('user', CONFIG['clickhouse']['user']) \
-            .option('password', CONFIG['clickhouse']['pass']) \
+            .option('user', CLICKHOUSE_USER) \
+            .option('password', CLICKHOUSE_PASS) \
             .option('batchsize', '100000') \
             .option('isolationLevel', 'NONE') \
             .option('rewriteBatchedStatements', 'true') \
@@ -268,8 +272,8 @@ def insert_staging_into_silver(df):
             .option('driver', 'com.clickhouse.jdbc.ClickHouseDriver') \
             .option('url', f"jdbc:clickhouse://{CONFIG['clickhouse']['host']}:{CONFIG['clickhouse']['port']}/{CONFIG['clickhouse']['dbs']['silver_db']}?compress=false") \
             .option('dbtable', 'trip_fin_details') \
-            .option('user', CONFIG['clickhouse']['user']) \
-            .option('password', CONFIG['clickhouse']['pass']) \
+            .option('user', CLICKHOUSE_USER) \
+            .option('password', CLICKHOUSE_PASS) \
             .option('batchsize', '100000') \
             .option('isolationLevel', 'NONE') \
             .option('rewriteBatchedStatements', 'true') \
@@ -320,43 +324,6 @@ def insert_staging_into_gold(df):
             'dropoff_datetime_id',
             (round(unix_timestamp(col('dropoff_datetime')) / 300) * 300).cast(LongType()))
 
-        # # Get distance bucket ID
-        logging.warning('Getting distance buckets')
-        dim_distance_df = spark.read \
-            .format('jdbc') \
-            .option('driver', 'com.clickhouse.jdbc.ClickHouseDriver') \
-            .option('url', f"jdbc:clickhouse://{CONFIG['clickhouse']['host']}:{CONFIG['clickhouse']['port']}/{CONFIG['clickhouse']['dbs']['golden_db']}?compress=false") \
-            .option('user', CONFIG['clickhouse']['user']) \
-            .option('password', CONFIG['clickhouse']['pass']) \
-            .option('dbtable', f"(SELECT distance_bucket_id, min_distance, max_distance FROM dim_distance) AS t") \
-            .load()
-
-        # Join main dataframe with distance buckets
-        df_gold = df_gold.alias('t') \
-            .join(dim_distance_df.alias('d'),
-                (col('t.trip_distance') >= col('d.min_distance')) &
-                (col('t.trip_distance') < col('d.max_distance')),
-                how='left') \
-            .select('t.*', 'distance_bucket_id')
-        
-        # Get duration bucket ID
-        logging.warning('Getting duration buckets')
-        dim_duration_df = spark.read \
-            .format('jdbc') \
-            .option('driver', 'com.clickhouse.jdbc.ClickHouseDriver') \
-            .option('url', f"jdbc:clickhouse://{CONFIG['clickhouse']['host']}:{CONFIG['clickhouse']['port']}/{CONFIG['clickhouse']['dbs']['golden_db']}?compress=false") \
-            .option('user', CONFIG['clickhouse']['user']) \
-            .option('password', CONFIG['clickhouse']['pass']) \
-            .option('dbtable', f"(SELECT duration_bucket_id, min_duration, max_duration FROM dim_duration) AS t") \
-            .load()
-
-        # Join main dataframe with duration buckets
-        df_gold = df_gold.alias('t') \
-            .join(dim_duration_df.alias('d'),
-                (col('t.trip_duration') >= col('d.min_duration')) &
-                (col('t.trip_duration') < col('d.max_duration')),
-                how='left') \
-            .select('t.*', 'duration_bucket_id')
         logging.warning('Data Sample for golden layer:')
         df_gold.show(5)
 
@@ -389,8 +356,8 @@ def insert_staging_into_gold(df):
             .option('driver', 'com.clickhouse.jdbc.ClickHouseDriver') \
             .option('url', f"jdbc:clickhouse://{CONFIG['clickhouse']['host']}:{CONFIG['clickhouse']['port']}/{CONFIG['clickhouse']['dbs']['golden_db']}?compress=false") \
             .option('dbtable', 'dim_datetime') \
-            .option('user', CONFIG['clickhouse']['user']) \
-            .option('password', CONFIG['clickhouse']['pass']) \
+            .option('user', CLICKHOUSE_USER) \
+            .option('password', CLICKHOUSE_PASS) \
             .option('batchsize', '100000') \
             .option('isolationLevel', 'NONE') \
             .option('rewriteBatchedStatements', 'true') \
@@ -403,8 +370,8 @@ def insert_staging_into_gold(df):
             .option('driver', 'com.clickhouse.jdbc.ClickHouseDriver') \
             .option('url', f"jdbc:clickhouse://{CONFIG['clickhouse']['host']}:{CONFIG['clickhouse']['port']}/{CONFIG['clickhouse']['dbs']['golden_db']}?compress=false") \
             .option('dbtable', 'fact_trip') \
-            .option('user', CONFIG['clickhouse']['user']) \
-            .option('password', CONFIG['clickhouse']['pass']) \
+            .option('user', CLICKHOUSE_USER) \
+            .option('password', CLICKHOUSE_PASS) \
             .option('batchsize', '100000') \
             .option('isolationLevel', 'NONE') \
             .option('rewriteBatchedStatements', 'true') \
@@ -435,8 +402,8 @@ def mark_file_processed(file_name):
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=CLICKHOUSE_USER,
+            password=CLICKHOUSE_PASS
         )
         ch_client.command(sql)
         logging.warning(f'File {file_name} marked as processed.')

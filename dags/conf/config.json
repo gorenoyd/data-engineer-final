@@ -3,8 +3,6 @@
     "path": "http://minio:9000/",
     "host": "minio",
     "port": 9000,
-    "user": "minioadmin",
-    "pass": "minioadmin",
     "bucket": "nyc-taxi-raw-data"
   },
 
@@ -21,8 +19,6 @@
     "host": "clickhouse",
     "port": 8123,
     "native_port": 9000,
-    "user": "default",
-    "pass": "admin",
     "dbs": {
       "staging_db": "nyc_taxi_staging",
       "silver_db": "nyc_taxi_silver",
