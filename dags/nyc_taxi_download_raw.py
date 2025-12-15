@@ -219,11 +219,11 @@ def download_raw_data_file():
                     write_file_info_to_db(raw_data_file_name, raw_data_url, taxi['taxi_type_id'])
 
                 # TODO
-                tmp_counter += 1
+                # tmp_counter += 1
 
             # TODO
-            if tmp_counter > 3:
-                break;
+            # if tmp_counter > 3:
+            #     break;
         # TODO
         break;
 

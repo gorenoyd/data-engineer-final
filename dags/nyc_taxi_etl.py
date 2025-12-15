@@ -140,6 +140,9 @@ with DAG(
                 'spark.hadoop.fs.s3a.path.style.access': 'true',          
                 'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
 
+                # 'spark.executor.userClassPathFirst': 'true',
+                # 'spark.driver.userClassPathFirst': 'true',
+
                 'spark.sql.session.timeZone': 'UTC'
             }
         )

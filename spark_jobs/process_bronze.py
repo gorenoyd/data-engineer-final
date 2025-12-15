@@ -6,6 +6,7 @@ from pyspark.sql.types import FloatType, LongType
 import sys
 import json
 import clickhouse_connect
+import re
 
 
 # Set logging level
@@ -47,10 +48,20 @@ def drop_outliers(df, column_name):
     return df
 
 
-def clean_data(df):
+def clean_data(df, file_name):
     """
     Cleans data in the dataframe
     """
+
+    # Get year and month from file name
+    match = re.search(r'(\d{4}-\d{2})', file_name)
+    if match:
+        year_month = match.group(1)
+        file_year, file_month = map(int, year_month.split('-'))
+    else:
+        logging.error(f"Cannot get date from file name {file_name}. Skip this file.")
+        return False
+    
     # List of money amount columns - all can be 0 or null
     money_columns = ['fare_amount',
                     'extra',
@@ -157,6 +168,9 @@ def clean_data(df):
 
         else:
             continue
+
+    # Drop rows that are outside month in file name
+    df = df.filter((year(col('pickup_datetime')) == file_year) & (month(col('pickup_datetime')) == file_month))
 
     # Drop duplicates by start date and location, end date and location and price
     df = df.dropDuplicates(['pickup_datetime', 'dropoff_datetime', 'PULocationID', 'DOLocationID', 'total_amount'])
@@ -430,7 +444,10 @@ for file in unprocessed_files_list:
         taxi_type_id = file['taxi_type_id']
 
         # Clean data
-        df = clean_data(df)
+        df = clean_data(df, file['file_name'])
+        # If file cannot be processed - get next one
+        if not df:
+            continue
 
         # Insert data into silver layer
         df = insert_staging_into_silver(df)
