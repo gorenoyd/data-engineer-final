@@ -1,7 +1,6 @@
 from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-from airflow.utils.task_group import TaskGroup
 # TODO
 from airflow.providers.standard.operators.empty import EmptyOperator
 from airflow.exceptions import AirflowException
@@ -32,7 +31,7 @@ DAG_FOLDER = os.path.dirname(__file__)
 CONFIG_PATH = os.path.join(DAG_FOLDER, 'conf', 'config.json')
 
 #Load environmental variables
-load_dotenv(dotenv_path='./conf/.env', override=True)
+load_dotenv(dotenv_path=f'{DAG_FOLDER}/conf/.env', override=True)
 
 # Load config file
 with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
@@ -81,8 +80,8 @@ def get_unprocessed_files_list():
         ch_client = clickhouse_connect.get_client(
             host=CONFIG['clickhouse']['host'],
             port=CONFIG['clickhouse']['port'],
-            username=CONFIG['clickhouse']['user'],
-            password=CONFIG['clickhouse']['pass']
+            username=os.getenv('CLICKHOUSE_USER'),
+            password=os.getenv('CLICKHOUSE_PASS')
         )
 
         result = ch_client.query(sql)
@@ -127,7 +126,7 @@ with DAG(
         process_bronze = SparkSubmitOperator(
             task_id=f'process_bronze',
             application='/opt/spark/spark_jobs/process_bronze.py',
-            application_args=[json.dumps(CONFIG), json.dumps(unprocessed_files_list)],
+            application_args=[json.dumps(CONFIG), json.dumps(unprocessed_files_list), os.getenv('CLICKHOUSE_USER'), os.getenv('CLICKHOUSE_PASS')],
             conn_id='spark_default',
             name=f'NYC_ETL',
             conf={
@@ -135,11 +134,14 @@ with DAG(
                 'spark.driver.extraJavaOptions': '-Dlog4j.configuration=file:/opt/airflow/dags/conf/log4j.properties',
                 'spark.executor.extraJavaOptions': '-Dlog4j.configuration=file:/opt/airflow/dags/conf/log4j.properties',
 
-                'spark.hadoop.fs.s3a.access.key': CONFIG['storage']['user'],
-                'spark.hadoop.fs.s3a.secret.key': CONFIG['storage']['pass'],
+                'spark.hadoop.fs.s3a.access.key': os.getenv('STORAGE_USER'),
+                'spark.hadoop.fs.s3a.secret.key': os.getenv('STORAGE_PASS'),
                 'spark.hadoop.fs.s3a.endpoint': CONFIG['storage']['path'],
                 'spark.hadoop.fs.s3a.path.style.access': 'true',          
                 'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
+
+                # 'spark.executor.userClassPathFirst': 'true',
+                # 'spark.driver.userClassPathFirst': 'true',
 
                 'spark.sql.session.timeZone': 'UTC'
             }

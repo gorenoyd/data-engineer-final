@@ -6,8 +6,6 @@ CREATE TABLE IF NOT EXISTS fact_trip (
     PULocationID UInt16 NOT NULL,
     DOLocationID UInt16 NOT NULL,
     payment_type Nullable(UInt16),
-    distance_bucket_id Nullable(UInt16),
-    duration_bucket_id Nullable(UInt16),
     pickup_datetime Datetime NOT NULL,
     dropoff_datetime Datetime NOT NULL,
     passenger_count Nullable(UInt8),

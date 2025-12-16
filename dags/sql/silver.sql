@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS trip_main_details (
     passenger_count Nullable(UInt8),
     trip_distance Nullable(Float32),
     RatecodeID Nullable(UInt16),
-    store_and_fwd_flag  BOOLEAN,   
+    store_and_fwd_flag  Nullable(BOOLEAN),   
     PULocationID UInt16 NOT NULL,
     DOLocationID UInt16 NOT NULL,
     payment_type Nullable(UInt16),
