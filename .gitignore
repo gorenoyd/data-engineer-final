@@ -2,6 +2,4 @@ __pycache__/
 jars/
 *.jar
 .env
-
-
-
+.ipynb_checkpoints/
